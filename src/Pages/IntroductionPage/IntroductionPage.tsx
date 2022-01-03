@@ -8,9 +8,9 @@ const Dd = styled.div`
 
 const Reveal: React.SFC = ({ children }) => (
   <ScrollAnimation
-    animateIn={"fadeIn"}
+    animateIn={"fadeInUp"}
     animateOut={"fadeOut"}
-    duration={2}
+    duration={1}
     // offset={400}
   >
     {children}
@@ -21,13 +21,23 @@ const IntroductionPage = () => {
   return (
     <>
       <div>회사 소개 페이지</div>
-      <Dd>안녕</Dd>
+      <Reveal>안녕</Reveal>
       <Reveal>Hi</Reveal>
       <ScrollAnimation
-        animateIn="fadeIn"
+        animateIn="fadeInUp"
         animateOut="fadeOut"
-        duration={0.5}
+        duration={1}
         delay={0}
+        // initiallyVisible={true}
+      >
+        <h1>React Animate On Scroll</h1>
+        <h2>Using:</h2>
+      </ScrollAnimation>
+      <ScrollAnimation
+        animateIn="fadeInUp"
+        animateOut="fadeOut"
+        duration={1}
+        delay={20}
         // initiallyVisible={true}
       >
         <h1>React Animate On Scroll</h1>
