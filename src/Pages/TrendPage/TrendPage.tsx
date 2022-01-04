@@ -42,8 +42,8 @@ const TrendPage = () => {
         </GraphContainer>
       </LeftSide>
       <RightSide>
-        <LineArticle data={priceRank} />
-        <LineArticle data={executionRanking} />
+        <LineArticle data={[priceRank, executionRanking]} />
+        <LineArticle data={[executionRanking]} />
       </RightSide>
     </TrendMain>
   );

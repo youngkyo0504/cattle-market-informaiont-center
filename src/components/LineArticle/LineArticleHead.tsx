@@ -1,5 +1,6 @@
 import styled from "styled-components/macro";
 import ArticleData from "../../@types/ArticleData";
+import Pagination from "react-js-pagination";
 
 const LineArticleHeadContainer = styled.div`
   position: relative;
@@ -14,7 +15,7 @@ const LineArticleHeadTitle = styled.div`
 const LineArticleDate = styled.div`
   position: absolute;
   right: 15px;
-  top: 12px;
+  top: 10px;
 
   span {
     color: #999;
@@ -23,18 +24,38 @@ const LineArticleDate = styled.div`
   }
 `;
 
-interface LineArticleHead {
+interface LineArticleHeadProps {
   data: ArticleData<any>;
+  page: number;
+  handlePageChange: (page: number) => void;
+  totalPageNumber: number;
 }
-const LineArticleHead = ({ data }: LineArticleHead) => {
+const LineArticleHead = ({
+  data,
+  page,
+  handlePageChange,
+  totalPageNumber,
+}: LineArticleHeadProps) => {
   return (
     <LineArticleHeadContainer>
       <LineArticleHeadTitle> {data.title}</LineArticleHeadTitle>
       <LineArticleDate>
-        <span>{data.date}</span> <span>기준</span>
+        <Pagination
+          activePage={page}
+          itemsCountPerPage={1}
+          totalItemsCount={totalPageNumber}
+          pageRangeDisplayed={-1}
+          prevPageText={"‹"}
+          nextPageText={"›"}
+          onChange={handlePageChange}
+          hideFirstLastPages={true}
+        />
+        {/*<span>{data.date}</span> <span>기준</span>*/}
       </LineArticleDate>
     </LineArticleHeadContainer>
   );
 };
+
+// totalItemsCount/itemsCountPerPage = 총 페이지 수;
 
 export default LineArticleHead;
