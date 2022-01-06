@@ -24,6 +24,7 @@ const StyledHeader = styled.header<ColorProps>`
   top: 0;
   width: 100%;
   height: 80px;
+  z-index: 1;
 `;
 
 const Contents = styled.div<LayoutProps>`
