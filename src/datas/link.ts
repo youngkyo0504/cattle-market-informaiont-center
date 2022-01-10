@@ -17,6 +17,10 @@ const links: ILink[] = [
     name: "우시장 정보",
     src: "/markets",
   },
+  {
+    name: "full page",
+    src: "/fullpage",
+  },
 ];
 
 export default links;

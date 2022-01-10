@@ -7,6 +7,7 @@ import IntroductionPage from "./IntroductionPage/IntroductionPage";
 import MarketsPage from "./MarketsPage/MarketsPage";
 import CattlePage from "./CattlePage/CattlePage";
 import styled from "styled-components";
+import FullPage from "./FullPage/FullPage";
 
 const ContentContainer = styled.main`
   max-width: 1400px;
@@ -24,6 +25,7 @@ const Page = () => {
         <Route path="/cattle" element={<CattlePage />} />
         <Route path="/trends" element={<TrendPage />} />
         <Route path="/markets" element={<MarketsPage />} />
+        <Route path="/fullpage" element={<FullPage />} />
       </Routes>
     </ContentContainer>
   );

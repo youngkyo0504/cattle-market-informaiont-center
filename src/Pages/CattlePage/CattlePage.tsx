@@ -125,7 +125,10 @@ const CattlePage = () => {
   const styles = {
     transform: `translate(${0}px, ${progress * -20}px)`,
   };
-
+  const easeOutSine = (x: number): number => {
+    return 1 - Math.cos((x * Math.PI) / 2);
+    // return Math.sin((x * Math.PI) / 2);
+  };
   useEffect(() => {
     window.addEventListener("load", () => {
       setTimeout(function () {
@@ -168,7 +171,12 @@ const CattlePage = () => {
           ></BlackWallpaper>
           <AbsoluteSection
             style={{
-              opacity: 1 - speed * (progress - windowY), //1step
+              // opacity: 1 - speed * (progress - windowY), //1step
+              // opacity: 1 - speed * (progress - windowY),
+              opacity:
+                progress > step
+                  ? 0 //3step
+                  : 1 - easeOutSine(progress * speed), //2step
               ...styles,
             }}
           >
@@ -190,9 +198,11 @@ const CattlePage = () => {
           <AbsoluteSection
             style={{
               opacity:
-                progress > 2 * step
-                  ? 1 - speed * (progress - windowY - 2 * step) //3step
-                  : speed * (progress - windowY) - 1, //2step
+                progress > 2 * step && progress < 3 * step
+                  ? 1 - easeOutSine(speed * (progress - 2 * step)) //3step
+                  : progress > step && progress <= 2 * step
+                  ? easeOutSine(speed * (progress - step))
+                  : 0,
               ...styles,
             }}
           >
@@ -206,10 +216,18 @@ const CattlePage = () => {
           <AbsoluteSection
             style={{
               opacity:
-                progress > 4 * step
-                  ? 1 - speed * (progress - windowY - 4 * step) //5step
-                  : speed * (progress - windowY) - 3, //4step
+                progress > 4 * step && progress < 5 * step
+                  ? 1 - easeOutSine(speed * (progress - 4 * step)) //3step
+                  : progress > 3 * step && progress <= 4 * step
+                  ? easeOutSine(speed * (progress - 3 * step))
+                  : 0,
               ...styles,
+
+              // opacity:
+              //   progress > 4 * step
+              //     ? 1 - speed * (progress - windowY - 4 * step) //5step
+              //     : speed * (progress - windowY) - 3, //4step
+              // ...styles,
             }}
           >
             <TextBox>

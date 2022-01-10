@@ -30,7 +30,7 @@ const StyledHeader = styled.header<ColorProps>`
 const Contents = styled.div<LayoutProps>`
   ${css({
     fontSize: 6,
-    maxWidth: 3,
+    maxWidth: 4,
     width: "96%",
     height: "100%",
   })};
