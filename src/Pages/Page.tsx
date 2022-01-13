@@ -7,6 +7,7 @@ import IntroductionPage from "./IntroductionPage/IntroductionPage";
 import MarketsPage from "./MarketsPage/MarketsPage";
 import CattlePage from "./CattlePage/CattlePage";
 import styled from "styled-components";
+import HighchartCowOptionMaker from "../service/highchart-option-maker/highchart-cow-option-maker";
 
 const ContentContainer = styled.main`
   max-width: 1400px;
@@ -16,13 +17,18 @@ const ContentContainer = styled.main`
 `;
 
 const Page = () => {
+  const highcahrtCowOptionMaker = HighchartCowOptionMaker.getInstance();
+  console.log(highcahrtCowOptionMaker);
+  console.log(1);
+  const cowStockOptions = highcahrtCowOptionMaker.getData();
+  console.log(2);
   return (
     <ContentContainer>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/introduction" element={<IntroductionPage />} />
         <Route path="/cattle" element={<CattlePage />} />
-        <Route path="/trends" element={<TrendPage />} />
+        <Route path="/trends" element={<TrendPage data={cowStockOptions} />} />
         <Route path="/markets" element={<MarketsPage />} />
       </Routes>
     </ContentContainer>

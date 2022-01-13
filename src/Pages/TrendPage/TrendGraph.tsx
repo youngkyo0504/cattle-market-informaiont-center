@@ -1,6 +1,8 @@
 import React from "react";
 import ChartContainer from "../../components/Chart/ChartContainer";
 import styled from "styled-components";
+import { cowStockOptions } from "../../datas";
+import Highcharts from "highcharts";
 
 const GraphContainer = styled.div`
   display: flex;
@@ -37,7 +39,7 @@ const TrendGraphIndexArrow = styled.span``;
 const TrendGraphIndexPercent = styled.span`
   padding-left: 10px;
 `;
-const TrendGraph = () => {
+const TrendGraph = ({ data }: { data: Highcharts.Options }) => {
   return (
     <GraphContainer>
       <TrendGraphHead>
@@ -53,7 +55,7 @@ const TrendGraph = () => {
           </TrendGraphIndexDesc>
         </TrendGraphChangeDown>
       </TrendGraphHead>
-      <ChartContainer />
+      <ChartContainer data={data} />
     </GraphContainer>
   );
 };
