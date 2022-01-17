@@ -10,7 +10,6 @@ const Wrapper = styled.div`
 `;
 
 const ChartContainer = ({ data }: { data: Highcharts.Options }) => {
-  console.log(data);
   return (
     <Wrapper>
       <MinimalChart highcharts={Highcharts} options={data} />

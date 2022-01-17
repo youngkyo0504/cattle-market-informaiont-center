@@ -17,18 +17,13 @@ const ContentContainer = styled.main`
 `;
 
 const Page = () => {
-  const highcahrtCowOptionMaker = HighchartCowOptionMaker.getInstance();
-  console.log(highcahrtCowOptionMaker);
-  console.log(1);
-  const cowStockOptions = highcahrtCowOptionMaker.getData();
-  console.log(2);
   return (
     <ContentContainer>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/introduction" element={<IntroductionPage />} />
         <Route path="/cattle" element={<CattlePage />} />
-        <Route path="/trends" element={<TrendPage data={cowStockOptions} />} />
+        <Route path="/trends" element={<TrendPage />} />
         <Route path="/markets" element={<MarketsPage />} />
       </Routes>
     </ContentContainer>

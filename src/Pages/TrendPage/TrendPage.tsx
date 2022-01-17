@@ -34,8 +34,7 @@ const GraphContainer = styled.div`
 `;
 const highcahrtCowOptionMaker = HighchartCowOptionMaker.getInstance();
 const cowStockOptions = highcahrtCowOptionMaker.getData();
-
-const TrendPage = ({ data }: any) => {
+const TrendPage = () => {
   return (
     <TrendMain>
       <LeftSide>
@@ -47,9 +46,7 @@ const TrendPage = ({ data }: any) => {
           <TrendGraph data={minimalData} />
           <TrendGraph data={cowStockOptions} />
         </GraphContainer>
-        <GraphContainer>
-          <LineChart />
-        </GraphContainer>
+        <GraphContainer>{/*<LineChart />*/}</GraphContainer>
       </LeftSide>
       <RightSide>
         <LineArticle data={[priceRank, executionRanking]} />

@@ -4,7 +4,7 @@ import { IPriceData } from "../@types";
 
 // Todo
 // Legacy code 변경해야됨
-interface cowData {
+export interface cowData {
   // 타입을 다시설정한다.
   areaData: (
     | number
