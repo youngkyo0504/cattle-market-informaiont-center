@@ -22,7 +22,8 @@ const options: Highcharts.Options = {
     enabled: false,
   },
   chart: {
-    width: 300,
+    width: 500,
+    height: 300,
     spacingBottom: 0,
     spacingTop: 0,
     spacingLeft: 0,
@@ -33,7 +34,7 @@ const options: Highcharts.Options = {
     minorGridLineWidth: 0,
     lineColor: "transparent",
     labels: {
-      enabled: false,
+      enabled: true,
     },
     minorTickLength: 0,
     tickLength: 0,
@@ -50,7 +51,7 @@ const options: Highcharts.Options = {
     title: { text: null },
   },
   navigator: {
-    enabled: false,
+    enabled: true,
   },
 };
 
@@ -64,7 +65,6 @@ const LineChart = (props: HighchartsReact.Props) => {
   return (
     <HighchartsReact
       highcharts={Highcharts}
-      constructorType="stockChart"
       options={options}
       ref={chartComponentRef}
       {...props}

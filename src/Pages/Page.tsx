@@ -7,6 +7,7 @@ import IntroductionPage from "./IntroductionPage/IntroductionPage";
 import MarketsPage from "./MarketsPage/MarketsPage";
 import CattlePage from "./CattlePage/CattlePage";
 import styled from "styled-components";
+import HighchartCowOptionMaker from "../service/highchart-option-maker/highchart-cow-option-maker";
 
 const ContentContainer = styled.main`
   max-width: 1400px;

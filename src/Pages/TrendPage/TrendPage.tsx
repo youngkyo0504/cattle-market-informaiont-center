@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import TrendGraph from "./TrendGraph";
 import LineArticle from "../../components/LineArticle/LineArticle";
 import priceRank from "../../datas/priceRank";
 import executionRanking from "../../datas/executionRanking";
+import LineChart from "../../components/Chart/LineChart";
+import minimalData from "../../datas/minimalData";
+import ChartContainer from "../../components/Chart/ChartContainer";
+import HighchartCowOptionMaker from "../../service/highchart-option-maker/highchart-cow-option-maker";
 
 const LeftSide = styled.div`
   display: flex;
@@ -28,23 +32,27 @@ const GraphContainer = styled.div`
   width: 100%;
   margin-bottom: 10px;
 `;
+const highcahrtCowOptionMaker = HighchartCowOptionMaker.getInstance();
+const cowStockOptions = highcahrtCowOptionMaker.getData();
 const TrendPage = () => {
   return (
     <TrendMain>
       <LeftSide>
         <GraphContainer>
-          <TrendGraph />
-          <TrendGraph />
+          <TrendGraph data={minimalData} />
+          <TrendGraph data={minimalData} />
         </GraphContainer>
         <GraphContainer>
-          <TrendGraph />
-          <TrendGraph />
+          <TrendGraph data={minimalData} />
+          <TrendGraph data={cowStockOptions} />
         </GraphContainer>
+        <GraphContainer>{/*<LineChart />*/}</GraphContainer>
       </LeftSide>
       <RightSide>
         <LineArticle data={[priceRank, executionRanking]} />
         <LineArticle data={[executionRanking]} />
       </RightSide>
+      <ChartContainer data={cowStockOptions} />
     </TrendMain>
   );
 };
