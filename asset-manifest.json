@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/cattle-market-informaiont-center/static/css/main.505c8f6f.chunk.css",
+    "main.js": "/cattle-market-informaiont-center/static/js/main.7cf08850.chunk.js",
+    "main.js.map": "/cattle-market-informaiont-center/static/js/main.7cf08850.chunk.js.map",
+    "runtime-main.js": "/cattle-market-informaiont-center/static/js/runtime-main.24ad9dc5.js",
+    "runtime-main.js.map": "/cattle-market-informaiont-center/static/js/runtime-main.24ad9dc5.js.map",
+    "static/js/2.dd0e55b2.chunk.js": "/cattle-market-informaiont-center/static/js/2.dd0e55b2.chunk.js",
+    "static/js/2.dd0e55b2.chunk.js.map": "/cattle-market-informaiont-center/static/js/2.dd0e55b2.chunk.js.map",
+    "static/js/3.ac9baabd.chunk.js": "/cattle-market-informaiont-center/static/js/3.ac9baabd.chunk.js",
+    "static/js/3.ac9baabd.chunk.js.map": "/cattle-market-informaiont-center/static/js/3.ac9baabd.chunk.js.map",
+    "index.html": "/cattle-market-informaiont-center/index.html",
+    "static/css/main.505c8f6f.chunk.css.map": "/cattle-market-informaiont-center/static/css/main.505c8f6f.chunk.css.map",
+    "static/js/2.dd0e55b2.chunk.js.LICENSE.txt": "/cattle-market-informaiont-center/static/js/2.dd0e55b2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.24ad9dc5.js",
+    "static/js/2.dd0e55b2.chunk.js",
+    "static/css/main.505c8f6f.chunk.css",
+    "static/js/main.7cf08850.chunk.js"
+  ]
+}
